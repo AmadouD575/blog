@@ -9,15 +9,20 @@
 
         <ul class="post-tags">
         {{ range .Params.tags }}
-            <li class="post-tag"><a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+           <li class="post-tag"><a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}">#{{ . }}</a></li>
         {{ end }}
         </ul>
     </div>
-
     <div class="post-content">
         <p>
             {{ .Content }}
         </p>
+    </div>
+    <div id="image-3">
+        {{ $image := .Resources.GetMatch "my_img.png" }}
+        {{ with $image }}
+        <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+        {{ end }}
     </div>
 </div>
 

@@ -28,6 +28,11 @@ html {
   position: relative;
 }
 
+.post-header-section>h1{
+  color: burlywood;
+  text-align: center;
+}
+
 body {
   margin-bottom: 170px;
 }
